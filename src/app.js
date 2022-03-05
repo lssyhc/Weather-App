@@ -22,22 +22,22 @@ app.use(express.static(publicDirectoryPath));
 
 app.get("", (req, res) => {
   res.render("index", {
-    title: "Weather App",
+    title: "Layanan Cuaca",
     name: "Cahyo Susilo",
   });
 });
 
 app.get("/about", (req, res) => {
   res.render("about", {
-    title: "About Me",
+    title: "Tentang Saya",
     name: "Cahyo Susilo",
   });
 });
 
 app.get("/help", (req, res) => {
   res.render("help", {
-    title: "Help Page",
-    helpText: "This is some helpful text",
+    title: "Halaman Bantuan",
+    helpText: "Ini adalah beberapa teks yang bermanfaat",
     name: "Cahyo Susilo",
   });
 });
@@ -45,7 +45,7 @@ app.get("/help", (req, res) => {
 app.get("/weather", (req, res) => {
   if (!req.query.address) {
     return res.send({
-      error: "You must provide an address",
+      error: "Anda harus memberikan alamat",
     });
   }
 
@@ -74,7 +74,7 @@ app.get("/weather", (req, res) => {
 app.get("/products", (req, res) => {
   if (!req.query.search) {
     return res.send({
-      error: "You must provide a search term",
+      error: "Anda harus memasukkan pencarian",
     });
   }
 
@@ -88,7 +88,7 @@ app.get("/help/*", (req, res) => {
   res.render("404", {
     title: "404",
     name: "Cahyo Susilo",
-    errorMessage: "Help article not found",
+    errorMessage: "Artikel bantuan tidak ditemukan",
   });
 });
 
@@ -96,10 +96,10 @@ app.get("*", (req, res) => {
   res.render("404", {
     title: "404",
     name: "Cahyo Susilo",
-    errorMessage: "Page not found",
+    errorMessage: "Halaman tidak ditemukan",
   });
 });
 
 app.listen(port, () => {
-  console.info(`Server is up on port ${port}`);
+  console.info(`Server aktif pada port ${port}`);
 });

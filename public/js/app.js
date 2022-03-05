@@ -1,4 +1,4 @@
-console.info("Client side JavaScript file is loaded!");
+console.info("File JavaScript Client Side dimuat!");
 
 const weatherForm = document.querySelector("form");
 const search = document.querySelector("input");
